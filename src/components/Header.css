@@ -53,6 +53,10 @@
     border-radius: 0 5px 5px 0;
 }
 
+.header__cart{
+    margin-right: 10px;
+}
+
 .header__item6{
     grid-row-start: 3;
     grid-column-start: 1;
@@ -76,7 +80,20 @@
     display: none;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 275px){
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header__input, .header__location, .header__cart, .header__menu{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 800px) {
     .header{
         display: grid;
         grid-template-rows: 50px 40px;

@@ -163,7 +163,7 @@ function Header() {
       </div>
       <div className="header__item6"></div>
       <div className="header__location" onClick={handleOpen}>
-        <LocationOnOutlinedIcon /> Deliver to {region}, {country}.
+        <LocationOnOutlinedIcon /> <p style={{fontWeight:'500'}}>Deliver to {region}, {country}</p>
       </div>
       <div className="header__return">Return & Orders</div>
     </div>

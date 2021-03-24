@@ -1,0 +1,125 @@
+.footer__top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__top1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    background-color: white;
+    width: 100%;
+}
+.footer__top1 hr{
+    height: 0.2px;
+    border-width:0.2px 0px 0px 0px;
+    width: 100%;
+    margin: 20px 0;
+    border-color: lightgray;
+}
+
+.footer__top1 button{
+    width: 300px;
+    max-width: 60vw;
+    height: 35px;
+    background-color: #FEBD69;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.footer__top2{
+    background-color: #37475A;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.footer__top2 p{
+    padding: 15px;
+}
+
+.footer{
+    border: 1px solid transparent;
+    background-color: #232F3E;
+    color: white;
+}
+
+.footer__textContainer1{
+    display: none;
+}
+
+.footer__textContainer2{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.footer__text2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.footer__text2 p{
+    font-size: 14px;
+    font-weight: 100;
+    margin: 10px 0;
+}
+
+.footer__end{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.footer__logo{
+    width: 60vw;
+    max-width: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.footer__end p{
+    word-spacing: 2px;
+    letter-spacing: 0.5px;
+}
+
+.footer hr{
+    height: 0.2px;
+    border-width:0.2px 0px 0px 0px;
+    width: 100%;
+    margin: 40px 0;
+}
+
+@media only screen and (min-width: 600px){
+    .footer__textContainer2{
+        display: none;
+    }
+
+    .footer__textContainer1{
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 20px;
+        padding: 10px;
+    }
+    .footer__text{
+        text-align: left;
+        word-spacing: 1px;
+        letter-spacing: 0.5px;
+    }
+    
+    .footer__text h4{
+        margin: 10px 5px;
+    }
+    
+    .footer__text p{
+        padding: 5px;
+        font-size: 14px;
+    }
+}
