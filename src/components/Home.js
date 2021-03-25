@@ -67,7 +67,7 @@ function Home() {
                 flexDirection: "column",
                 padding: "16px",
                 margin: "10px 0 30px 0",
-                maxWidth: '100%',
+                maxWidth: "100%",
                 backgroundColor: "white",
               }}
             >
@@ -77,7 +77,7 @@ function Home() {
                   height: "35px",
                   margin: "20px 0",
                   backgroundColor: "#FEBD69",
-                  border: '1px solid black'
+                  border: "1px solid black",
                 }}
               >
                 Sign in securely
@@ -118,11 +118,11 @@ function Home() {
             <p>shop now</p>
           </div>
         </div>
-        <div  className="home__discoverAmazon" >
-            <img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Projects/HelpPage/BubbleShoveler/English/Fuji_Bubble_8Languages_en_US_updated_1x._CB445837675_.png"/>
-            <img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Projects/HelpPage/BubbleShoveler/English/Fuji_Bubble_8Languages_en_US_updated_1x._CB445837675_.png"/>
-            <img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Projects/HelpPage/BubbleShoveler/English/Fuji_Bubble_8Languages_en_US_updated_1x._CB445837675_.png"/>
-            <img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Projects/HelpPage/BubbleShoveler/English/Fuji_Bubble_8Languages_en_US_updated_1x._CB445837675_.png"/>
+        <div className="home__discoverAmazon">
+          <img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Projects/HelpPage/BubbleShoveler/English/Fuji_Bubble_8Languages_en_US_updated_1x._CB445837675_.png" />
+          <img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Projects/HelpPage/BubbleShoveler/English/Fuji_Bubble_8Languages_en_US_updated_1x._CB445837675_.png" />
+          <img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Projects/HelpPage/BubbleShoveler/English/Fuji_Bubble_8Languages_en_US_updated_1x._CB445837675_.png" />
+          <img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Projects/HelpPage/BubbleShoveler/English/Fuji_Bubble_8Languages_en_US_updated_1x._CB445837675_.png" />
         </div>
       </div>
     </div>

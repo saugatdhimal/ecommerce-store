@@ -21,6 +21,8 @@ import {
   ListItemIcon,
   Drawer,
 } from "@material-ui/core";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function getModalStyle() {
   const top = 50;
@@ -83,6 +85,7 @@ function Header() {
   const [country, setCountry] = useState("Select Country");
   const [region, setRegion] = useState("");
   const [drawOpen, setDrawOpen] = useState(false);
+  const count = useSelector((state) => state.cartItem.data.length);
 
   const handleOpen = () => {
     setOpen(true);
@@ -147,23 +150,30 @@ function Header() {
       <div className="header__menu">
         <MenuIcon onClick={() => setDrawOpen(true)} />
       </div>
-      <div className="header__logo">
-        <img src={logo} alt="logo" />
-      </div>
+      <Link to="/">
+        <div className="header__logo">
+          <img src={logo} alt="logo" />
+        </div>
+      </Link>
       <div className="header__signIn">Hello, Sign In</div>
-      <div className="header__cart">
-        <AddShoppingCartIcon fontSize="large" />
-        Cart
-      </div>
+      <Link to="/checkout">
+        <div className="header__cart">
+          <AddShoppingCartIcon fontSize="large" />
+          Cart
+          <span>{count}</span>
+        </div>
+      </Link>
       <div className="header__input">
         <input type="text" placeholder="Search Amazon"></input>
         <button>
           <SearchIcon fontSize="large" />
         </button>
       </div>
-      <div className="header__item6"></div>
       <div className="header__location" onClick={handleOpen}>
-        <LocationOnOutlinedIcon /> <p style={{fontWeight:'500'}}>Deliver to {region}, {country}</p>
+        <LocationOnOutlinedIcon />{" "}
+        <p style={{ fontWeight: "500" }}>
+          Deliver to {region}, {country}
+        </p>
       </div>
       <div className="header__return">Return & Orders</div>
     </div>
