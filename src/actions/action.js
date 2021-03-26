@@ -4,3 +4,10 @@ export const addToCart = (data) => {
         payload: data
     }
 }
+
+export const removeFromCart = (id) => {
+    return{
+        type: "REMOVE_FROM_CART",
+        payload: id
+    }
+}

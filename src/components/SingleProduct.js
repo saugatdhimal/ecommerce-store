@@ -5,7 +5,6 @@ import { addToCart } from "../actions/action";
 
 function SingleProduct({ id, image, description, price, rating }) {
   const dispatch = useDispatch();
-  const cartItem = useSelector((state) => state.cartItem);
   const data = {
     id: id,
     image: image,

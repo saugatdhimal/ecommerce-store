@@ -1,163 +1,162 @@
-.homeGrid__image{
-    object-fit: cover;
-    width: 100%;
-    height: 150px;
+.homeGrid__image {
+  object-fit: cover;
+  width: 100%;
+  height: 150px;
 }
 
-.homeGrid__imageSlider{
+.homeGrid__imageSlider {
+  display: none;
+}
+
+.homeGrid__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.homeGrid__item1 {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+.homeGrid__item1 h3 {
+  padding: 20px 0 10px 10px;
+  margin-left: 10px;
+}
+
+.homeGrid__item1 p {
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.homeGrid__itemImage img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.homeGrid__signInCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homeGrid__signIn {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.homeGrid__signIn button {
+  height: 35px;
+  margin: 20px 0;
+  background-color: #f0c14b;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  border-radius: 2px;
+  outline: none;
+}
+
+.homeGrid__signInImg img {
+  width: 100%;
+  height: fit-content;
+}
+
+.homeGrid__discoverAmazon {
+  display: none;
+}
+
+@media only screen and (max-width: 275px) {
+  .homeGrid__image {
     display: none;
+  }
 }
 
-.homeGrid__container{
-    display: flex;
-    flex-direction: column;
-}
-
-.homeGrid__item1{
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    width: 100%;
-    background-color: white;
-    margin-bottom: 10px;
-}
-
-.homeGrid__item1 h3{
-    padding: 20px 0 10px 10px;
-    margin-left: 10px;
-}
-
-.homeGrid__item1 p{
+@media only screen and (min-width: 600px) {
+  .homeGrid__imageSlider {
+    display: revert;
+  }
+  .homeGrid__image {
+    display: none;
+  }
+  .homeGrid__container {
+    position: absolute;
+    top: 260px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
     padding: 10px;
-    margin-left: 10px;
-}
+  }
 
-.homeGrid__itemImage img{
-    width: 100%;
-    object-fit: cover;
-}
+  .homeGrid__itemImage {
+    padding: 10px;
+  }
 
-.homeGrid__signInCont{
+  .homeGrid__itemImage img {
+    height: 300px;
+  }
+
+  .homeGrid__discoverAmazon {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.homeGrid__signIn{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    margin-bottom: 20px;
+    grid-column-start: 1;
+    grid-column-end: -1;
     background-color: white;
+    padding: 20px;
+  }
+  .homeGrid__discoverAmazon h3 {
+    padding: 10px 0 10px 10px;
+  }
+
+  .homeGrid__discoverAmazonImg {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .homeGrid__discoverAmazonImg img {
+    width: 25%;
+    max-width: 200px;
+  }
+
+  .homeGrid__footer {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
 }
 
-.homeGrid__signIn button{
-    height: 35px;
-    margin: 20px 0;
-    background-color: #FEBD69;
-    border-radius: 3px;
-    border: 1px solid black;
-    font-weight: 500;
+@media only screen and (min-width: 1000px) {
+  .homeGrid__container {
+    position: absolute;
+    top: 310px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    padding: 20px;
+  }
+  .homeGrid__itemImage {
+    padding: 20px;
+  }
 }
 
-.homeGrid__signInImg img{
-    width: 100%;
-    height: fit-content;
+@media only screen and (min-width: 1500px) {
+  .homeGrid__container {
+    width: 98%;
+    position: absolute;
+    top: 400px;
+  }
 }
 
-.homeGrid__discoverAmazon{
-    display: none;
-}
-
-@media only screen and (max-width: 275px){
-    .homeGrid__image{
-        display: none;
-    }
-}
-
-@media only screen and (min-width: 600px){
-    .homeGrid__imageSlider{
-        display: revert;
-    }
-    .homeGrid__image{
-        display: none;
-    }
-    .homeGrid__container{
-        position: absolute;
-        top: 260px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-gap: 10px;
-        padding: 10px;
-    }
-
-    .homeGrid__itemImage{
-        padding: 10px;
-    }
-
-    .homeGrid__itemImage img{
-        height: 300px;    
-    }
-
-    .homeGrid__discoverAmazon{
-        display: flex;
-        flex-direction: column;
-        grid-column-start: 1;
-        grid-column-end: -1;
-        background-color: white;
-        padding: 20px;
-    }
-    .homeGrid__discoverAmazon h3{
-        padding: 10px 0 10px 10px;
-    }
-
-    .homeGrid__discoverAmazonImg{
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .homeGrid__discoverAmazonImg img{
-        width: 25%;
-        max-width: 200px;
-    }
-
-    .homeGrid__footer{
-        grid-column-start: 1;
-        grid-column-end: -1;
-    }
-}
-
-@media only screen and (min-width: 1000px){
-    
-    .homeGrid__container{
-        position: absolute;
-        top: 310px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto;
-        grid-gap: 20px;
-        padding: 20px;
-    }
-    .homeGrid__itemImage{
-        padding: 20px;
-    }
-}
-
-@media only screen and (min-width: 1500px){
-    .homeGrid__container{
-        width: 98%;
-        position: absolute;
-        top: 400px;
-    }
-}
-
-
-@media only screen and (min-width: 2000px){
-    .homeGrid__container{
-        width: 98%;
-        position: absolute;
-        top: 480px;
-    }
+@media only screen and (min-width: 2000px) {
+  .homeGrid__container {
+    width: 98%;
+    position: absolute;
+    top: 480px;
+  }
 }

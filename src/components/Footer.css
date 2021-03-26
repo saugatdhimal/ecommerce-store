@@ -24,10 +24,12 @@
   width: 300px;
   max-width: 60vw;
   height: 35px;
-  background-color: #febd69;
   margin-bottom: 5px;
-  border-radius: 3px;
-  border: 1px solid black;
+  background-color: #f0c14b;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  border-radius: 2px;
+  outline: none;
 }
 
 .footer__top2 {
