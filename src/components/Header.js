@@ -6,6 +6,8 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import SearchIcon from "@material-ui/icons/Search";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import HomeIcon from "@material-ui/icons/Home";
+import CloseIcon from '@material-ui/icons/Close';
+import CategoryIcon from '@material-ui/icons/Category';
 import AccountCircleRoundedIcon from "@material-ui/icons/AccountCircleRounded";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
@@ -125,26 +127,82 @@ function Header() {
         <div className={classes.drawerDiv}>
           <AccountCircleRoundedIcon style={{ fontSize: 30 }} />
           <h3 style={{ marginLeft: "10px" }}>Hello, Sign In</h3>
+          <CloseIcon fontSize="large" style={{margin: 'auto'}} onClick={() => setDrawOpen(false)}/>
         </div>
         <List className={classes.list}>
+          <Link to="/" className="header__link">
           <ListItem>
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText>Home</ListItemText>
           </ListItem>
+          </Link>
+          <Link to="/checkout" className="header__link">
           <ListItem>
             <ListItemIcon>
-              <HomeIcon />
+              <AddShoppingCartIcon />
             </ListItemIcon>
-            <ListItemText>Home</ListItemText>
+            <ListItemText>Your Cart</ListItemText>
           </ListItem>
+          </Link>
+          <hr />
           <ListItem>
             <ListItemIcon>
-              <HomeIcon />
+              <CategoryIcon />
             </ListItemIcon>
-            <ListItemText>Home</ListItemText>
+            <ListItemText>Shop By Categories</ListItemText>
           </ListItem>
+          <hr />
+          <Link to="/basicsproducts" className="header__link">
+          <ListItem>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText>Amazon Basics</ListItemText>
+          </ListItem>
+          </Link>
+          <Link to="/beautyproducts" className="header__link">
+          <ListItem>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText>Beauty Products</ListItemText>
+          </ListItem>
+          </Link>
+          <Link to="/toyproducts" className="header__link">
+          <ListItem>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText>Toys</ListItemText>
+          </ListItem>
+          </Link>
+          <Link to="/exerciseproducts" className="header__link">
+          <ListItem>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText>Fitness Products</ListItemText>
+          </ListItem>
+          </Link>
+          <Link to="/products" className="header__link">
+          <ListItem>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText>Computers & Accessories</ListItemText>
+          </ListItem>
+          </Link>
+          <Link to="/laptopproducts" className="header__link">
+          <ListItem>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText>Laptops</ListItemText>
+          </ListItem>
+          </Link>
+          <Link to="/cameraproducts" className="header__link">
+          <ListItem>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText>Cameras</ListItemText>
+          </ListItem>
+          </Link>
         </List>
       </Drawer>
       <div className="header__menu">

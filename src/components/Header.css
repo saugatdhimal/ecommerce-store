@@ -85,6 +85,10 @@
 .header__return {
   display: none;
 }
+.header__link{
+  text-decoration: inherit;
+  color: inherit;
+}
 
 @media only screen and (max-width: 275px) {
   .header {

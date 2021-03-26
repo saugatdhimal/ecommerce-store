@@ -7,7 +7,7 @@ function CameraProducts() {
   return (
     <div className="product">
       <div>
-        <h2>Amazon Basics</h2>
+        <h2>Cameras</h2>
       </div>
       <hr />
       <div className="product__gridContainer">

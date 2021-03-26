@@ -14,7 +14,7 @@
   }
 
   .checkoutCart__total{
-    height: 60px;
+    height: fit-content;
     text-align: center;
     background-color:#f3f3f3;
     margin: 10px 0;
@@ -24,7 +24,7 @@
   }
 
   .checkoutCart__total button{
-      margin-top: 20px;
+      margin-top: 15px;
       height: 30px;
       background-color: #f0c14b;
       border: 1px solid;

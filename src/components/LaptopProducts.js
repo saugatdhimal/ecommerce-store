@@ -7,7 +7,7 @@ function LaptopProducts() {
   return (
     <div className="product">
       <div>
-        <h2>Amazon Basics</h2>
+        <h2>Laptops</h2>
       </div>
       <hr />
       <div className="product__gridContainer">
