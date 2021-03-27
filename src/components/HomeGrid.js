@@ -28,12 +28,12 @@ function HomeGrid() {
           <p>shop now</p>
         </div>
         </Link>
-        <Link to="/exerciseproducts">
+        <Link to="/cameraproducts">
         <div className="homeGrid__item1">
-          <h3>Get fit at home</h3>
+          <h3>Cameras</h3>
           <div className="homeGrid__itemImage">
             <img
-              src="https://images-na.ssl-images-amazon.com/images/G/01/events/GFAH/GWDesktop_SingleImageCard_fitathome_1x._SY304_CB434924743_.jpg"
+              src="https://images-na.ssl-images-amazon.com/images/I/510tzcJmyeL._AC_SY1000_.jpg"
               alt=""
             />
           </div>
@@ -88,24 +88,24 @@ function HomeGrid() {
           <p>shop now</p>
         </div>
         </Link>
-        <Link to="/cameraproducts">
-        <div className="homeGrid__item1">
-          <h3>Cameras</h3>
-          <div className="homeGrid__itemImage">
-            <img
-              src="https://images-na.ssl-images-amazon.com/images/I/510tzcJmyeL._AC_SY1000_.jpg"
-              alt=""
-            />
-          </div>
-          <p>shop now</p>
-        </div>
-        </Link>
         <Link to="/beautyproducts">
         <div className="homeGrid__item1">
           <h3>Beauty Picks</h3>
           <div className="homeGrid__itemImage">
             <img
               src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_Beauty_1x._SY304_CB432774351_.jpg"
+              alt=""
+            />
+          </div>
+          <p>shop now</p>
+        </div>
+        </Link>
+        <Link to="/exerciseproducts">
+        <div className="homeGrid__item1">
+          <h3>Get fit at home</h3>
+          <div className="homeGrid__itemImage">
+            <img
+              src="https://images-na.ssl-images-amazon.com/images/G/01/events/GFAH/GWDesktop_SingleImageCard_fitathome_1x._SY304_CB434924743_.jpg"
               alt=""
             />
           </div>

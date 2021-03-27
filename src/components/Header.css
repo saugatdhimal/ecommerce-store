@@ -109,10 +109,10 @@
 @media only screen and (min-width: 800px) {
   .header {
     display: grid;
-    grid-template-rows: 50px 40px;
+    grid-template-rows: auto auto;
     grid-template-columns: 120px 100px 1fr 100px 100px 100px;
     grid-gap: 5px;
-    height: 95px;
+    height: 100px;
     background-color: black;
     color: white;
     padding-top: 5px;

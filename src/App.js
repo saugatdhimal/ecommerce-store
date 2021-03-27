@@ -10,6 +10,8 @@ import ToyProducts from './components/ToyProducts'
 import CameraProducts from './components/CameraProducts'
 import LaptopProducts from './components/LaptopProducts'
 import CheckoutCart from './components/CheckoutCart'
+import Login from './components/Login'
+import Register from './components/Register'
 import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import ScrollToTop from './ScrollToTop'
 
@@ -18,17 +20,49 @@ function App() {
     <Router>
       <ScrollToTop />
     <div className="App">
-      <Header />
       <Switch>
-        <Route path={"/"} exact component={HomeGrid}/>
-        <Route path={"/basicsproducts"} exact component={BasicsProducts}/>
-        <Route path={"/exerciseproducts"} exact component={ExerciseProducts}/>
-        <Route path={"/products"} exact component={Products}/>
-        <Route path={"/beautyproducts"} exact component={BeautyProducts}/>
-        <Route path={"/toyproducts"} exact component={ToyProducts}/>
-        <Route path={"/cameraproducts"} exact component={CameraProducts}/>
-        <Route path={"/laptopproducts"} exact component={LaptopProducts}/>
-        <Route path={"/checkout"} exact component={CheckoutCart}/>
+        <Route path={"/"} exact>
+          <Header/>
+          <HomeGrid />
+        </Route>
+        <Route path={"/login"} exact>
+          <Login />
+        </Route>
+        <Route path={"/register"} exact>
+          <Register />
+        </Route>
+        <Route path={"/products"} exact>
+          <Header/>
+          <Products />
+        </Route>
+        <Route path={"/basicsproducts"} exact>
+          <Header/>
+          <BasicsProducts />
+        </Route>
+        <Route path={"/exerciseproducts"} exact>
+          <Header/>
+          <ExerciseProducts />
+        </Route>
+        <Route path={"/beautyproducts"} exact>
+          <Header/>
+          <BeautyProducts />
+        </Route>
+        <Route path={"/toyproducts"} exact>
+          <Header/>
+          <ToyProducts />
+        </Route>
+        <Route path={"/cameraproducts"} exact>
+          <Header/>
+          <CameraProducts />
+        </Route>
+        <Route path={"/laptopproducts"} exact>
+          <Header/>
+          <LaptopProducts />
+        </Route>
+        <Route path={"/checkout"} exact>
+          <Header/>
+          <CheckoutCart />
+        </Route>
         <Redirect to={'/'} />
       </Switch>
     </div>
