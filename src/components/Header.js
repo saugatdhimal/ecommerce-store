@@ -6,8 +6,8 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import SearchIcon from "@material-ui/icons/Search";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import HomeIcon from "@material-ui/icons/Home";
-import CloseIcon from "@material-ui/icons/Close";
-import CategoryIcon from "@material-ui/icons/Category";
+import CloseIcon from '@material-ui/icons/Close';
+import CategoryIcon from '@material-ui/icons/Category';
 import AccountCircleRoundedIcon from "@material-ui/icons/AccountCircleRounded";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
@@ -24,7 +24,10 @@ import {
   Drawer,
 } from "@material-ui/core";
 import { useSelector } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { removeUser, clearCart } from "../actions/action";
+import { auth } from '../firebase'
+import { useDispatch } from "react-redux";
 
 function getModalStyle() {
   const top = 50;
@@ -87,9 +90,11 @@ function Header() {
   const [country, setCountry] = useState("Select Country");
   const [region, setRegion] = useState("");
   const [drawOpen, setDrawOpen] = useState(false);
-  const [text, setText] = useState("");
+  const [text, setText] = useState('')
   const count = useSelector((state) => state.cartItem.data.length);
-
+  const user = useSelector((state) => state.userName.data[0]?.firstname)
+  const dispatch = useDispatch()
+  console.log(user)
   const handleOpen = () => {
     setOpen(true);
   };
@@ -99,20 +104,28 @@ function Header() {
   };
 
   const handleClick = () => {
-    if (text.match(/computer/i)) {
-      window.location = "/products";
-    } else if (text.match(/laptop/i)) {
-      window.location = "/laptopproducts";
-    } else if (text.match(/toy/i)) {
-      window.location = "/toyproducts";
-    } else if (text.match(/camera/i)) {
-      window.location = "/cameraproducts";
-    } else if (text.match(/cosmetic/i)) {
-      window.location = "/beautyproducts";
-    } else {
-      alert("PRODUCT YOU SEARCHING IS OUT OF STOCK");
+    if(text.match(/computer/i)){
+      window.location = '/products'
+    }else if(text.match(/laptop/i)){
+      window.location = '/laptopproducts'
+    }else if(text.match(/toy/i)){
+      window.location = '/toyproducts'
+    }else if(text.match(/camera/i)){
+      window.location = '/cameraproducts'
+    }else if(text.match(/cosmetic/i)){
+      window.location = '/beautyproducts'
+    }else{
+      alert("PRODUCT YOU SEARCHING IS OUT OF STOCK")
     }
-  };
+  }
+
+  const signOut = () => {
+    if(user){
+      dispatch(removeUser())
+      dispatch(clearCart())
+      auth.signOut()
+    }
+  }
 
   return (
     <div className="header">
@@ -144,28 +157,24 @@ function Header() {
         <div className={classes.drawerDiv}>
           <AccountCircleRoundedIcon style={{ fontSize: 30 }} />
           <h3 style={{ marginLeft: "10px" }}>Hello, Sign In</h3>
-          <CloseIcon
-            fontSize="large"
-            style={{ margin: "auto" }}
-            onClick={() => setDrawOpen(false)}
-          />
+          <CloseIcon fontSize="large" style={{margin: 'auto'}} onClick={() => setDrawOpen(false)}/>
         </div>
         <List className={classes.list}>
           <Link to="/" className="header__link">
-            <ListItem>
-              <ListItemIcon>
-                <HomeIcon />
-              </ListItemIcon>
-              <ListItemText>Home</ListItemText>
-            </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText>Home</ListItemText>
+          </ListItem>
           </Link>
           <Link to="/checkout" className="header__link">
-            <ListItem>
-              <ListItemIcon>
-                <AddShoppingCartIcon />
-              </ListItemIcon>
-              <ListItemText>Your Cart</ListItemText>
-            </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <AddShoppingCartIcon />
+            </ListItemIcon>
+            <ListItemText>Your Cart</ListItemText>
+          </ListItem>
           </Link>
           <hr />
           <ListItem>
@@ -176,46 +185,53 @@ function Header() {
           </ListItem>
           <hr />
           <Link to="/basicsproducts" className="header__link">
-            <ListItem>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText>Amazon Basics</ListItemText>
-            </ListItem>
+          <ListItem>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText>Amazon Basics</ListItemText>
+          </ListItem>
           </Link>
           <Link to="/beautyproducts" className="header__link">
-            <ListItem>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText>Cosmetic Products</ListItemText>
-            </ListItem>
+          <ListItem>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText>Cosmetic Products</ListItemText>
+          </ListItem>
           </Link>
           <Link to="/toyproducts" className="header__link">
-            <ListItem>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText>Toys</ListItemText>
-            </ListItem>
+          <ListItem>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText>Toys</ListItemText>
+          </ListItem>
           </Link>
           <Link to="/exerciseproducts" className="header__link">
-            <ListItem>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText>Fitness Products</ListItemText>
-            </ListItem>
+          <ListItem>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText>Fitness Products</ListItemText>
+          </ListItem>
           </Link>
           <Link to="/products" className="header__link">
-            <ListItem>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText>Computers & Accessories</ListItemText>
-            </ListItem>
+          <ListItem>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText>Computers & Accessories</ListItemText>
+          </ListItem>
           </Link>
           <Link to="/laptopproducts" className="header__link">
-            <ListItem>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText>Laptops</ListItemText>
-            </ListItem>
+          <ListItem>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText>Laptops</ListItemText>
+          </ListItem>
           </Link>
           <Link to="/cameraproducts" className="header__link">
-            <ListItem>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText>Cameras</ListItemText>
-            </ListItem>
+          <ListItem>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText>Cameras</ListItemText>
+          </ListItem>
           </Link>
         </List>
       </Drawer>
@@ -227,10 +243,12 @@ function Header() {
           <img src={logo} alt="logo" />
         </div>
       </Link>
-      <Link to="/login">
-        <div className="header__signIn">Hello, Sign In</div>
+      <Link to={!user && "/login"}>
+      <div className="header__signIn" onClick={signOut}>
+        Hello, {user?user:''} {user?'Sign Out': 'Sign In'}
+        </div>
       </Link>
-      <Link to="/checkout">
+      <Link to="/checkout" >
         <div className="header__cart">
           <AddShoppingCartIcon fontSize="large" />
           Cart
@@ -238,12 +256,7 @@ function Header() {
         </div>
       </Link>
       <div className="header__input">
-        <input
-          type="text"
-          placeholder="Search Amazon (search limited to: computer,camera,laptop,toy,cosmetic)"
-          valur={text}
-          onChange={(e) => setText(e.target.value)}
-        />
+        <input type="text" placeholder="Search Amazon (search limited to: computer,camera,laptop,toy,cosmetic)" value={text} onChange={e => setText(e.target.value)} />
         <button onClick={handleClick}>
           <SearchIcon fontSize="large" />
         </button>

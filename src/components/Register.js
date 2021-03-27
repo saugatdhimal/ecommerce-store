@@ -1,12 +1,33 @@
 import React, { useState } from "react";
 import "./Register.css";
 import { Link, useHistory } from "react-router-dom";
+import { auth, db } from '../firebase'
+import { user } from "../actions/action"
+import { useDispatch } from "react-redux";
 
 function Register() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const dispatch = useDispatch()
+  
+
+  const register = (event) => {
+    event.preventDefault()
+    auth.createUserWithEmailAndPassword(email, password)
+      .then(auth => {
+         db.collection('users').doc(auth.user.uid).set({
+         firstname: firstname,
+         lastname: lastname
+        })
+        dispatch(user({firstname: firstname, lastname: lastname}))
+      })
+      .catch((error) => alert(error.message));
+    history.push('/')
+    alert('Successfully registered')
+    }
   return (
     <div className="register">
       <Link to="/">
@@ -18,11 +39,17 @@ function Register() {
       <div className="register__container">
         <h1> Sign-In</h1>
         <form>
-          <h5>USERNAME</h5>
+          <h5>FIRSTNAME</h5>
           <input
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={firstname}
+            onChange={(e) => setFirstname(e.target.value)}
+          />
+          <h5>LASTNAME</h5>
+          <input
+            type="text"
+            value={lastname}
+            onChange={(e) => setLastname(e.target.value)}
           />
           <h5>E-MAIL</h5>
           <input
@@ -38,7 +65,7 @@ function Register() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button className="register__button" type="submit">
+          <button className="register__button" type="submit" onClick={register}>
             Register
           </button>
         </form>

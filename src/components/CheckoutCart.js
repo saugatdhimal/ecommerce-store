@@ -7,13 +7,14 @@ import CurrencyFormat from 'react-currency-format';
 
 function CheckoutCart() {
     const items = useSelector(state => state.cartItem.data)
+    const user = useSelector((state) => state.userName.data[0]?.firstname)
     const count = items.length;
     const subTotal = items.reduce((amount,item) => amount + item.price,0)
   return (
     <>
     <div className="checkoutCart">
         <div className="checkoutCart__items">
-            <div className="checkoutCart__yourCart"><h3>Hello, Welcome To Your Cart</h3></div>
+            <div className="checkoutCart__yourCart"><h3>Hello, {user} Welcome To Your Cart</h3></div>
         {items.map((item) => {
             return(
           <CheckoutProduct 

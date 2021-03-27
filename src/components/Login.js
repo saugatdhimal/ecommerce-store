@@ -1,11 +1,31 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
+import { auth, db } from '../firebase'
+import { user } from "../actions/action"
+import { useDispatch } from "react-redux";
+
 
 function Login() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch()
+
+  const signIn = (event) => {
+    event.preventDefault();
+    auth.signInWithEmailAndPassword(email, password)
+        .then(auth => {
+          if(auth){
+            db.collection('users').doc(auth.user.uid).get().then(doc => {
+              dispatch(user(doc.data()))
+            })
+            history.push('/')
+            alert('Successfully signed-in')
+          }
+        })
+        .catch((error) => alert(error.message));
+      }
   return (
     <div className="login">
       <Link to="/">
@@ -31,7 +51,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button className="login__signInButton" type="submit">
+          <button className="login__signInButton" type="submit" onClick={signIn}>
             SIGN IN
           </button>
         </form>
