@@ -54,6 +54,7 @@
 
 .homeGrid__signIn button {
   height: 35px;
+  width: 100%;
   margin: 20px 0;
   background-color: #f0c14b;
   border: 1px solid;

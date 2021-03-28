@@ -2,14 +2,20 @@ import React from "react";
 import "./Footer.css";
 
 function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
   return (
     <>
       <div className="footer__top">
         <div className="footer__top1">
           <hr />
-          <button>Sign In for better experience</button>
+          <button onClick={scrollToTop}>Sign In for better experience</button>
         </div>
-        <div className="footer__top2">
+        <div className="footer__top2" onClick={scrollToTop}>
           <p>Back to top</p>
         </div>
       </div>

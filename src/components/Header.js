@@ -94,7 +94,6 @@ function Header() {
   const count = useSelector((state) => state.cartItem.data.length);
   const user = useSelector((state) => state.userName.data[0]?.firstname)
   const dispatch = useDispatch()
-  console.log(user)
   const handleOpen = () => {
     setOpen(true);
   };
@@ -156,7 +155,7 @@ function Header() {
       <Drawer open={drawOpen} onClose={() => setDrawOpen(false)}>
         <div className={classes.drawerDiv}>
           <AccountCircleRoundedIcon style={{ fontSize: 30 }} />
-          <h3 style={{ marginLeft: "10px" }}>Hello, Sign In</h3>
+          <h3 style={{ marginLeft: "10px" }}>Hello, {user? user: 'SignIn'}</h3>
           <CloseIcon fontSize="large" style={{margin: 'auto'}} onClick={() => setDrawOpen(false)}/>
         </div>
         <List className={classes.list}>

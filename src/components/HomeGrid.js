@@ -3,8 +3,20 @@ import "./HomeGrid.css";
 import ImageSlider from "./ImageSlider";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { removeUser, clearCart } from "../actions/action";
+import { auth } from '../firebase'
 
 function HomeGrid() {
+  const dispatch = useDispatch()
+  const user = useSelector((state) => state.userName.data[0]?.firstname)
+  const signOut = () => {
+    if(user){
+      dispatch(removeUser())
+      dispatch(clearCart())
+      auth.signOut()
+    }
+  }
   return (
     <div className="homeGrid">
       <div className="homeGrid__imageSlider">
@@ -54,8 +66,10 @@ function HomeGrid() {
         </Link>
         <div className="homeGrid__signInCont">
           <div className="homeGrid__signIn">
-            <h3>Sign in for the best experience</h3>
-            <button>Sign in securely</button>
+            <h3>{user?'Shopping is amazing with amazon':'Sign in for the best experience'}</h3>
+            <Link to={!user && "/login"}>
+            <button onClick={signOut}>{user?'Sign Out':'Sign in securely'}</button>
+            </Link>
           </div>
           <div className="homeGrid__signInImg">
             <img

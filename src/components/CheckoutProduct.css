@@ -15,7 +15,7 @@
 
 .checkoutProduct__itemImg img {
   width: 100%;
-  max-width: 180px;
+  max-width: 100px;
 }
 
 .checkoutProduct__item p {
