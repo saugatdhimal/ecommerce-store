@@ -21,7 +21,6 @@ function Login() {
               dispatch(user(doc.data()))
             })
             history.push('/')
-            alert('Successfully signed-in')
           }
         })
         .catch((error) => alert(error.message));
