@@ -13,7 +13,7 @@ function Footer() {
       <div className="footer__top">
         <div className="footer__top1">
           <hr />
-          <button onClick={scrollToTop}>Sign In for better experience</button>
+          <button >Sign In for better experience</button>
         </div>
         <div className="footer__top2" onClick={scrollToTop}>
           <p>Back to top</p>
